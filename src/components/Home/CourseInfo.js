@@ -1,19 +1,37 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card,Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-const CourseInfo = ({title,icon}) => {
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const CourseInfo = ({course}) => {
+  const {title,icon,name}=course;
     return (
-        <Card className="course-card">
+        <Col md={3}>
+          <Card className="course-card">
   <Card.Img className="course-img" variant="top" src={icon} />
   <Card.Body>
-    <Card.Title className="text-center link"><Link to="/courses">{title}</Link></Card.Title>
+    <Card.Title className="text-center mb-4"><Link to={`/courses/${name}`} className="link">{title}</Link></Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      <div className="d-flex justify-content-between">
+        
+      <div className="d-flex mt-2">
+      <div className="me-1 rating-icon">
+      <FontAwesomeIcon icon={faStar}/>
+      <FontAwesomeIcon icon={faStar}/>
+      <FontAwesomeIcon icon={faStar}/>
+      <FontAwesomeIcon icon={faStar}/>
+      <FontAwesomeIcon icon={faStar}/>
+      </div>
+      <p className='fw-bold' style={{fontSize:13}}>130 views </p>
+      </div>
+      <div>
+         <Link to="cart" className="text-decoration-none"> <button className="add-cart-button">Add course</button></Link>
+        </div>
+      </div>
     </Card.Text>
   </Card.Body>
 </Card>
+        </Col>
     );
 };
 

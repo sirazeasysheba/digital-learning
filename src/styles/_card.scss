@@ -5,5 +5,9 @@
     border-radius: 20px;
 }
 .link{
-    text-decoration: none !important;
+    text-decoration: none ;
+    color: #0eb582;
+    &:hover{
+        color: #537abc;
+    }
 }

@@ -5,31 +5,38 @@ import Home from "./components/Home/Home";
 import ForgetPassword from "./components/Login/ForgetPassword";
 import Login from "./components/Login/Login";
 import Registration from "./components/Login/Registration";
-import './styles/styles.scss';
+import Cart from "./pages/Cart";
+import Order from "./pages/Order";
+import "./styles/styles.scss";
 
 function App() {
   return (
     <div className="App">
-       <Switch>
-       <Route exact path="/courses">
-        <Departments/>
+      <Switch>
+        <Route exact path="/courses/:name">
+          <Departments />
         </Route>
         <Route exact path="/contact">
-        <Contact/>
+          <Contact />
         </Route>
         <Route exact path="/login">
-        <Login/>
+          <Login />
         </Route>
         <Route exact path="/registration">
-        <Registration/>
+          <Registration />
         </Route>
         <Route exact path="/forget-password">
-        <ForgetPassword/>
+          <ForgetPassword />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route exact path="/order">
+          <Order />
         </Route>
         <Route exact path="/">
-        <Home/>
+          <Home />
         </Route>
-        
       </Switch>
     </div>
   );
