@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../../media/dl-logo.png";
+import logo from "../../media/logo.svg";
 const Navigation = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img src={logo} alt="Digital Learning" style={{ height: 40 }} />
+            <img src={logo} alt="Digital Learning" style={{ width: 120 }} />
           </a>
           <button
             className="navbar-toggler"
