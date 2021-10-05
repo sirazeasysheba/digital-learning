@@ -1,0 +1,42 @@
+@import './footer';
+@import "./navbar";
+@import "./home";
+@import "./courses";
+@import "./card";
+@import "./forms";
+
+.submit-btn{
+    padding: 10px 40px;
+    color: white;
+    background-color: #0eb582;
+    border-radius: 10px;
+    border: none;
+    &:hover{
+        background-color: #1e2f50;
+
+    }
+}
+.contact-input{
+    border: 1px solid #0eb582 !important;
+    height: 50px;
+    &:focus{
+        overflow:hidden !important;
+        box-shadow: none !important;
+      
+    }
+}
+.contact-text-area{
+    border: 1px solid #0eb582 !important;
+    &:focus{
+        overflow:hidden !important;
+        box-shadow: none !important;
+      
+    }
+}
+.submit-button{
+    background-color: #0eb582 !important;
+    border: none !important;
+    &:hover{
+        background-color: #1e2f50 !important;
+    }
+}
