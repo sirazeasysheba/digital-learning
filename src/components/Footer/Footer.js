@@ -46,42 +46,42 @@ const Footer = () => {
         <Col md={2} className="footerOnFocus">
           <h6 className="text-white mb-4 mt-5">QUICK LINKS</h6>
           <li className="d-block mb0 "></li>
-          <a href="#" className="d-block  mb-2 mt-1">
-            History
+          <a href="/about-digital-learning" className="d-block  mb-2 mt-1">
+            About
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="/gallery" className="d-block  mb-2">
             Gallery
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="#courses" className="d-block  mb-2">
             All Courses
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="/success-stories" className="d-block  mb-2">
             Success Story
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="/contact" className="d-block  mb-2">
             Contact Us
           </a>
         </Col>
         <Col md={2} className="footerOnFocus">
           <h6 className="text-white mb-4 mt-5">COURSES</h6>
           <li className="d-block mb0 "></li>
-          <a href="#" className="d-block  mb-2 mt-1">
-            Responsive Web Design
+          <a href="/courses/web-development" className="d-block  mb-2 mt-1">
+            Advanced Web Design
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="/courses/graphic-design" className="d-block  mb-2">
             Graphic Design
           </a>
-          <a href="#" className="d-block  mb-2">
+          <a href="/courses/digital-marketing" className="d-block  mb-2">
             Digital Marketing
           </a>
-          <a href="#" className="d-block mb-2">
+          <a href="/courses/content-writing" className="d-block mb-2">
             Content Writing
           </a>
         </Col>
         <Col md={4} className="mt-5 mb-2">
           <div className="address">
             <h6 className="text-white mb-4">CONTACT US</h6>
-            <div className="d-flex mb-2">
+            <div className="d-flex mb-2 footer-info">
               <div className="address-icon text-center me-2">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
@@ -93,7 +93,7 @@ const Footer = () => {
                 <p> North South Road, Block H, Dhaka 1212</p>
               </div>
             </div>
-            <div className="d-flex mb-2">
+            <div className="d-flex mb-2 footer-info">
               <div className="address-icon text-center me-2">
                 <FontAwesomeIcon
                   icon={faPhone}
@@ -106,7 +106,7 @@ const Footer = () => {
                 <p>+8801966-050506</p>
               </div>
             </div>
-            <div className="d-flex">
+            <div className="d-flex footer-info">
               <div className="address-icon text-center me-2">
                 <FontAwesomeIcon icon={faEnvelope} style={{ marginTop: 10 }} />
               </div>

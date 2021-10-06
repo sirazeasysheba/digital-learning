@@ -1,34 +1,46 @@
-.home-container{
-        height: 800px;
-        width: 100%;
-        position: relative;
-        background-image: url("../media/bg.jpg");
-        background-size: cover;
-        &::after {
-          height: 700px;
-          content: " ";
-          position: absolute;
-          top: 0%;
-          width: 33%;
-          right: 0%;
-          background-color: grey;
-          z-index: -50;
-        }  
-}
-.home-btn{
-  padding: 15px 30px;
-  background-color: white;
-  color: #02863A;
-  border-radius: 20px;
-  border:none;
-  font-size: 14px;
-  font-weight: 500;
-  &:hover{
-  background-color: #02863A;
-  color:white ;
+.home-container {
+  height: 800px;
+  width: 100%;
+  position: relative;
+  background-image: url("../media/bg.jpg");
+  background-size: cover;
+  &::after {
+    height: 700px;
+    content: " ";
+    position: absolute;
+    top: 0%;
+    width: 33%;
+    right: 0%;
+    background-color: grey;
+    z-index: -50;
   }
 }
-.search-form{
-  border: 1px solid  rgba(128,128,128,0.3);
-  border-radius: 20px
+.home-btn {
+  padding: 15px 30px;
+  background-color: white;
+  color: #02863a;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  &:hover {
+    background-color: #02863a;
+    color: white;
+  }
+}
+.search-form {
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 20px;
+}
+.graduate-icon {
+  font-size: 80px;
+  color: #02863a;
+}
+.graduation-section {
+  padding: 20px, 30px;
+  border: 3px solid #02863a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -33,14 +33,11 @@ const Navigation = () => {
               <li className="nav-item dropdown">
                 <button className="dropbtn">ABOUT</button>
                 <div className="dropdown-content">
-                  <a href="/">HISTORY</a>
-                  <a href="/">FOUNDERS</a>
-                  <a href="/">ADVISORS & MANAGEMENT</a>
-                  <a href="/">MENTORS</a>
-                  <a href="/">GALLERY</a>
-                  <a href="/">NEWS & EVENTS</a>
-                  <a href="/">SUCCESS STORIES</a>
-                  <a href="/">PAYMENT METHOD</a>
+                  <a href="/advisors-and-management">ADVISORS & MANAGEMENT</a>
+                  <a href="/mentors">MENTORS</a>
+                  <a href="/gallery">GALLERY</a>
+                  <a href="/news-and-events">NEWS & EVENTS</a>
+                  <a href="/success-stories">SUCCESS STORIES</a>
                 </div>
               </li>
               <li className="nav-item dropdown">

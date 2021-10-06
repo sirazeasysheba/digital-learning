@@ -4,7 +4,7 @@
 @import "./courses";
 @import "./card";
 @import "./forms";
-
+@import "./dashboard";
 .submit-btn {
   padding: 10px 40px;
   color: white;
@@ -41,7 +41,7 @@
   font-size: 24px;
   position: fixed;
   top: 20%;
-  left: 90%;
+  left: 60%;
   color: white;
   background-color: #0eb582;
   width: 60px !important;

@@ -15,10 +15,10 @@ const TopNavber = () => {
           icon={faPhone}
           className="fa-rotate-90 mt-1 nav-icons"
         />
-        <p className="ms-1 me-2">+8801966-050506 </p>
-        <p className="me-5">+8801966-050506</p>
+        <p className="ms-1 me-2 nav-phone">+8801966-050506 </p>
+        <p className="me-5 nav-phone">+8801966-050506</p>
         <FontAwesomeIcon icon={faEnvelope} className="mt-1" />
-        <p className="mx-2">info@easysheba.com </p>
+        <p className="mx-2 mail">info@easysheba.com </p>
       </div>
       <div className="d-flex mt-3 mx-3">
         <FontAwesomeIcon icon={faUserAlt} className="me-2 nav-icons" />
