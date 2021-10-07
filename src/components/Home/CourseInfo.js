@@ -7,7 +7,7 @@ const CourseInfo = ({ course }) => {
   const { title, icon, name } = course;
   return (
     <Col md={3}>
-      <Card className="course-card">
+      <Card className="course-card mb-3">
         <Card.Img className="card-img" variant="top" src={icon} />
         <Card.Body className="card-body">
           <Card.Title className="text-center mb-4">

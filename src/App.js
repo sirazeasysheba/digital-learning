@@ -1,6 +1,5 @@
 import { Route, Switch } from "react-router";
 import Contact from "./components/Contact/Contact";
-import DashBoard from "./components/DashBoard/DashBoard";
 import Departments from "./components/Departments/Departments";
 import Home from "./components/Home/Home";
 import ForgetPassword from "./components/Login/ForgetPassword";
@@ -15,7 +14,7 @@ import Advisors from "./pages/Advisors";
 import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Stories from "./pages/Stories";
-import Courses from "./components/DashBoard/Courses";
+import Practice from "./components/Practice";
 
 function App() {
   return (
@@ -42,12 +41,6 @@ function App() {
         <Route exact path="/order">
           <Order />
         </Route>
-        <Route exact path="/dashboard">
-          <DashBoard />
-        </Route>
-        <Route exact path="/all-courses">
-          <Courses />
-        </Route>
         <Route exact path="/about-digital-learning">
           <About />
         </Route>
@@ -65,6 +58,9 @@ function App() {
         </Route>
         <Route exact path="/success-stories">
           <Stories />
+        </Route>
+        <Route exact path="/practice">
+          <Practice />
         </Route>
         <Route exact path="/">
           <Home />

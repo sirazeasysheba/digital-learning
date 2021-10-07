@@ -3,15 +3,13 @@
   .course-head {
     font-weight: 700;
     position: relative;
-
+    font-size: 36px;
     &::after {
       content: "";
       position: absolute;
-      left: 45%;
-      right: 55%;
-      bottom: -8px;
       height: 3px;
       width: 120px;
+      bottom: 0;
       background-color: #02863a;
     }
   }
@@ -44,16 +42,16 @@
   margin-top: -20px;
 }
 .active-toggle-btn {
-  background-color: #1e2f50;
-  color: white;
-  border: none;
-  border-right: 1px solid grey;
-  width: 100%;
-  padding: 12px;
-  font-size: 20px;
-  &:focus {
-    background-color: #0eb582;
-  }
+  background-color: #1e2f50 !important;
+  color: white !important;
+}
+.nav-pills .nav-link.active {
+  background-color: #0eb582 !important;
+  color: white !important;
+}
+.tab-links {
+  color: white !important;
+  text-align: center;
 }
 .active-btn-section {
   width: 100%;
@@ -84,4 +82,9 @@
   justify-content: center;
   align-items: center;
   margin-top: -20px;
+}
+.details-paragraph {
+  border-left: 2px solid #0eb582;
+  padding-left: 15px;
+  text-align: justify;
 }

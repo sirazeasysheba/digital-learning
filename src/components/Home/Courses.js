@@ -36,7 +36,9 @@ const Courses = () => {
   console.log(courses);
   return (
     <div className="courses mt-5" id="courses">
-      <h1 className="text-center mb-5 course-head">Our Courses</h1>
+      <div className="d-flex justify-content-center mb-5 course-head">
+        Our Courses
+      </div>
       <Row className="mx-3">
         {courses?.map((course) => (
           <CourseInfo course={course} key={course.id}></CourseInfo>

@@ -12,9 +12,10 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="footer mt-5 mb-1">
+    <div className="footer mt-5">
       <Row className="me-2">
         <Col
           md={4}
@@ -46,39 +47,39 @@ const Footer = () => {
         <Col md={2} className="footerOnFocus">
           <h6 className="text-white mb-4 mt-5">QUICK LINKS</h6>
           <li className="d-block mb0 "></li>
-          <a href="/about-digital-learning" className="d-block  mb-2 mt-1">
+          <Link to="/about-digital-learning" className="d-block  mb-2 mt-1">
             About
-          </a>
-          <a href="/gallery" className="d-block  mb-2">
+          </Link>
+          <Link to="/gallery" className="d-block  mb-2">
             Gallery
-          </a>
-          <a href="#courses" className="d-block  mb-2">
+          </Link>
+          <Link to="#courses" className="d-block  mb-2">
             All Courses
-          </a>
-          <a href="/success-stories" className="d-block  mb-2">
+          </Link>
+          <Link to="/success-stories" className="d-block  mb-2">
             Success Story
-          </a>
-          <a href="/contact" className="d-block  mb-2">
+          </Link>
+          <Link to="/contact" className="d-block  mb-2">
             Contact Us
-          </a>
+          </Link>
         </Col>
         <Col md={2} className="footerOnFocus">
           <h6 className="text-white mb-4 mt-5">COURSES</h6>
           <li className="d-block mb0 "></li>
-          <a href="/courses/web-development" className="d-block  mb-2 mt-1">
+          <Link to="/courses/web-development" className="d-block  mb-2 mt-1">
             Advanced Web Design
-          </a>
-          <a href="/courses/graphic-design" className="d-block  mb-2">
+          </Link>
+          <Link to="/courses/graphic-design" className="d-block  mb-2">
             Graphic Design
-          </a>
-          <a href="/courses/digital-marketing" className="d-block  mb-2">
+          </Link>
+          <Link to="/courses/digital-marketing" className="d-block  mb-2">
             Digital Marketing
-          </a>
-          <a href="/courses/content-writing" className="d-block mb-2">
+          </Link>
+          <Link to="/courses/content-writing" className="d-block mb-2">
             Content Writing
-          </a>
+          </Link>
         </Col>
-        <Col md={4} className="mt-5 mb-2">
+        <Col md={4} className="mt-5 mb-2 footer-address">
           <div className="address">
             <h6 className="text-white mb-4">CONTACT US</h6>
             <div className="d-flex mb-2 footer-info">

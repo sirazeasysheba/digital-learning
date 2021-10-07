@@ -1,35 +1,43 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import Navigation from "../Navbar/Navigation";
 import { Link } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import {
   faSearch,
-  faTh,
+  faAtom,
   faGraduationCap,
   faUserGraduate,
+  faSignInAlt,
 } from "@fortawesome/free-solid-svg-icons";
 const HomeMain = () => {
   return (
     <>
       <div className="home-container d-flex align-items-center">
         <div className="ms-5">
-          <h1 className="mb-3">
-            Learn A Skill <br />
-            The World is yours
+          <h1 className="mb-3 text-white">
+            Learn & <br />
+            Lead the best
           </h1>
-          <h2 className="mb-3">Where dreamers become a doers and earners</h2>
-          <button className="home-btn me-3">FREE REGISTRATION</button>
+
+          <button className="home-btn me-3 fw-bold">
+            {" "}
+            <FontAwesomeIcon icon={faSignInAlt} className="home-btn-icon" />
+            FREE REGISTRATION
+          </button>
           <a href="#courses" className="text-decoration-none">
             {" "}
-            <button className="home-btn">VIEW COURSES</button>
+            <button className="home-btn fw-bold">
+              {" "}
+              <FontAwesomeIcon icon={faAtom} className="home-btn-icon" />
+              VIEW COURSES
+            </button>
           </a>
-          <Form className="flex-grow-1 d-flex justify-content-center h-100 w-50 mt-3 ms-3 search-form">
+          <Form className="flex-grow-1 d-flex justify-content-center h-100 w-75 mt-3 ms-3 search-form">
             <Form.Control
               id="search"
               name="search"
               placeholder="Search courses"
-              className="flex-grow-1 shadow-none border-0 rounded-0 bg-transparent"
+              className="flex-grow-1 shadow-none border-0 search-input"
             />
             <div style={{ marginTop: "5px" }}>
               <Button
@@ -51,14 +59,16 @@ const HomeMain = () => {
                 Digital Service Providing Institute
               </h2>
             </h2>
-            <p>
-              Digital Learning is a purpose-driven, global skill development
-              organization. It was created with a desire to make a tangible
-              difference in the lives of the underprivileged, disadvantaged, and
-              underserved population as a whole. The youth, especially the
-              female community, who struggle to find a comfortable living, is
-              our prime concern.
-            </p>
+            <div className="my-5 w-75">
+              <p className="details-paragraph">
+                Digital Learning is a purpose-driven, global skill development
+                organization. It was created with a desire to make a tangible
+                difference in the lives of the underprivileged, disadvantaged,
+                and underserved population as a whole. The youth, especially the
+                female community, who struggle to find a comfortable living, is
+                our prime concern.
+              </p>
+            </div>
             <Link
               to="/about-digital-learning"
               className="text-success fw-bold text-decoration-none"

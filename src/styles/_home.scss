@@ -1,11 +1,11 @@
 .home-container {
-  height: 800px;
+  height: 600px;
   width: 100%;
   position: relative;
   background-image: url("../media/bg.jpg");
   background-size: cover;
   &::after {
-    height: 700px;
+    height: 600px;
     content: " ";
     position: absolute;
     top: 0%;
@@ -23,14 +23,26 @@
   border: none;
   font-size: 14px;
   font-weight: 500;
+  .home-btn-icon {
+    color: #02863a;
+    margin-right: 10px;
+  }
   &:hover {
     background-color: #02863a;
     color: white;
+    .home-btn-icon {
+      color: white;
+    }
   }
 }
 .search-form {
   border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 20px;
+  background: white;
+  .search-input {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 }
 .graduate-icon {
   font-size: 80px;

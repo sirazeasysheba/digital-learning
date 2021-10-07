@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Nav, Row, Tab, Tabs } from "react-bootstrap";
 import {
   faClock,
   faFileInvoice,
@@ -11,25 +11,8 @@ import { faAlgolia } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 const CourseDetails = ({ course }) => {
-  const [active, setActive] = useState(true);
-  const [active2, setActive2] = useState(false);
-  const [active3, setActive3] = useState(false);
   const { title, duration, weekend, regular, description, price, img } = course;
-  const handleChange = () => {
-    setActive(true);
-    setActive2(false);
-    setActive3(false);
-  };
-  const handleChange2 = () => {
-    setActive(false);
-    setActive2(true);
-    setActive3(false);
-  };
-  const handleChange3 = () => {
-    setActive(false);
-    setActive2(false);
-    setActive3(true);
-  };
+
   return (
     <Row className="ms-4 mt-5">
       <div className="cart-icon">
@@ -45,8 +28,313 @@ const CourseDetails = ({ course }) => {
               <h6>৳ {price}</h6>
             </div>
           </div>
-          <p> {description}</p>
-          <Row className="active-btn-section mb-3">
+          <div className="mb-5">
+            <p className=" ms-3 details-paragraph" style={{ width: "80%" }}>
+              {" "}
+              {description}
+            </p>
+          </div>
+          <Row className="mt-3">
+            <Tab.Container id="left-tabs-example" defaultActiveKey="overview">
+              <Row>
+                <Nav variant="pills">
+                  <Row className="w-100 mx-2 mb-3">
+                    <Col md={4} className="px-0">
+                      <Nav.Item className="active-toggle-btn">
+                        <Nav.Link
+                          eventKey="overview"
+                          className="tab-links py-3"
+                        >
+                          Overview
+                        </Nav.Link>
+                      </Nav.Item>{" "}
+                    </Col>
+                    <Col md={4} className="px-0">
+                      {" "}
+                      <Nav.Item className="active-toggle-btn">
+                        <Nav.Link
+                          eventKey="curriculum"
+                          className="tab-links py-3"
+                        >
+                          Curriculum
+                        </Nav.Link>
+                      </Nav.Item>{" "}
+                    </Col>
+                    <Col md={4} className="px-0">
+                      <Nav.Item className="active-toggle-btn">
+                        <Nav.Link
+                          eventKey="objective"
+                          className="tab-links py-3"
+                        >
+                          Objective
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Col>
+                  </Row>
+                </Nav>
+
+                <Tab.Content>
+                  <Tab.Pane eventKey="overview">
+                    <div className="mt-4">
+                      <h5 className="fw-bold">This course includes</h5>
+                      <ul
+                        className="list-unstyled text-muted"
+                        style={{ fontSize: 14 }}
+                      >
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML is the standard markup language for creating Web
+                          pages.
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="fw-bold">Description</h5>
+                      <p>
+                        <ul
+                          className="list-unstyled text-muted"
+                          style={{ fontSize: 14 }}
+                        >
+                          <li className="mt-1">
+                            <FontAwesomeIcon
+                              icon={faFileInvoice}
+                              style={{ color: "#02863A" }}
+                            />{" "}
+                            HTML is the standard markup language for creating
+                            Web pages.
+                          </li>
+                          <li className="mt-1">
+                            <FontAwesomeIcon
+                              icon={faFileInvoice}
+                              style={{ color: "#02863A" }}
+                            />{" "}
+                            HTML stands for Hyper Text Markup Language HTML
+                            describes the structure of a Web page .
+                          </li>
+                          <li className="mt-1">
+                            <FontAwesomeIcon
+                              icon={faFileInvoice}
+                              style={{ color: "#02863A" }}
+                            />{" "}
+                            HTML stands for Hyper Text Markup Language HTML
+                            describes the structure of a Web page .
+                          </li>
+                          <li className="mt-1">
+                            <FontAwesomeIcon
+                              icon={faFileInvoice}
+                              style={{ color: "#02863A" }}
+                            />{" "}
+                            HTML stands for Hyper Text Markup Language HTML
+                            describes the structure of a Web page .
+                          </li>
+                          <li className="mt-1">
+                            <FontAwesomeIcon
+                              icon={faFileInvoice}
+                              style={{ color: "#02863A" }}
+                            />{" "}
+                            HTML stands for Hyper Text Markup Language HTML
+                            describes the structure of a Web page .
+                          </li>
+                        </ul>
+                      </p>
+                    </div>
+                    <div>
+                      <h5 className="fw-bold">Software & Tools Taught</h5>
+                      <ul
+                        className="list-unstyled text-muted"
+                        style={{ fontSize: 14 }}
+                      >
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML is the standard markup language for creating Web
+                          pages.
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                      </ul>
+                    </div>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="curriculum">
+                    <div className="mt-3">
+                      <h3> COURSE MODULE</h3>
+                      <ul
+                        className="list-unstyled text-muted"
+                        style={{ fontSize: 14 }}
+                      >
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML is the standard markup language for creating Web
+                          pages.
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faFileInvoice}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                      </ul>
+                      {/* Overview Of Digital Marketing Facebook Business Page Facebook
+                  Advertising 1 Facebook Advertising 2 Facebook Advertising 3
+                  Facebook Retargeting SEO Overview Keyword for SEO All about
+                  Website Content Strategy Complete On Page SEO using Yoast/Rank
+                  Math plugin Technical SEO 1 Technical SEO 2 OFF Page SEO 1 OFF
+                  Page SEO 2 Local SEO YouTube Introduction YouTube Channel
+                  YouTube Video Instagram Overview Google Ads 1 Google Ads 2
+                  E-mail Marketing LinkedIn Marketing */}
+                    </div>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="objective">
+                    <div className="mt-3">
+                      <h3>You will learn form this course</h3>
+                      <ul
+                        className="list-unstyled text-muted"
+                        style={{ fontSize: 14 }}
+                      >
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faHandPointRight}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML is the standard markup language for creating Web
+                          pages.
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faHandPointRight}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faHandPointRight}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faHandPointRight}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                        <li className="mt-1">
+                          <FontAwesomeIcon
+                            icon={faHandPointRight}
+                            style={{ color: "#02863A" }}
+                          />{" "}
+                          HTML stands for Hyper Text Markup Language HTML
+                          describes the structure of a Web page .
+                        </li>
+                      </ul>
+                    </div>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Row>
+            </Tab.Container>
+          </Row>
+          {/* <Row className="active-btn-section mb-3">
             <Col md={4} className="p-0">
               <button className="active-toggle-btn" onClick={handleChange}>
                 Overview
@@ -62,256 +350,7 @@ const CourseDetails = ({ course }) => {
                 Course Objective
               </button>
             </Col>
-          </Row>
-          {active && (
-            <div>
-              <div>
-                <h5 className="fw-bold">This course includes</h5>
-                <ul
-                  className="list-unstyled text-muted"
-                  style={{ fontSize: 14 }}
-                >
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML is the standard markup language for creating Web pages.
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="fw-bold">Description</h5>
-                <p>
-                  <ul
-                    className="list-unstyled text-muted"
-                    style={{ fontSize: 14 }}
-                  >
-                    <li className="mt-1">
-                      <FontAwesomeIcon
-                        icon={faFileInvoice}
-                        style={{ color: "#02863A" }}
-                      />{" "}
-                      HTML is the standard markup language for creating Web
-                      pages.
-                    </li>
-                    <li className="mt-1">
-                      <FontAwesomeIcon
-                        icon={faFileInvoice}
-                        style={{ color: "#02863A" }}
-                      />{" "}
-                      HTML stands for Hyper Text Markup Language HTML describes
-                      the structure of a Web page .
-                    </li>
-                    <li className="mt-1">
-                      <FontAwesomeIcon
-                        icon={faFileInvoice}
-                        style={{ color: "#02863A" }}
-                      />{" "}
-                      HTML stands for Hyper Text Markup Language HTML describes
-                      the structure of a Web page .
-                    </li>
-                    <li className="mt-1">
-                      <FontAwesomeIcon
-                        icon={faFileInvoice}
-                        style={{ color: "#02863A" }}
-                      />{" "}
-                      HTML stands for Hyper Text Markup Language HTML describes
-                      the structure of a Web page .
-                    </li>
-                    <li className="mt-1">
-                      <FontAwesomeIcon
-                        icon={faFileInvoice}
-                        style={{ color: "#02863A" }}
-                      />{" "}
-                      HTML stands for Hyper Text Markup Language HTML describes
-                      the structure of a Web page .
-                    </li>
-                  </ul>
-                </p>
-              </div>
-              <div>
-                <h5 className="fw-bold">Software & Tools Taught</h5>
-                <ul
-                  className="list-unstyled text-muted"
-                  style={{ fontSize: 14 }}
-                >
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML is the standard markup language for creating Web pages.
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                  <li className="mt-1">
-                    <FontAwesomeIcon
-                      icon={faFileInvoice}
-                      style={{ color: "#02863A" }}
-                    />{" "}
-                    HTML stands for Hyper Text Markup Language HTML describes
-                    the structure of a Web page .
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )}
-          {active2 && (
-            <div>
-              <h3> COURSE MODULE</h3>
-              <ul className="list-unstyled text-muted" style={{ fontSize: 14 }}>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faFileInvoice}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML is the standard markup language for creating Web pages.
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faFileInvoice}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faFileInvoice}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faFileInvoice}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faFileInvoice}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-              </ul>
-              {/* Overview Of Digital Marketing Facebook Business Page Facebook
-                Advertising 1 Facebook Advertising 2 Facebook Advertising 3
-                Facebook Retargeting SEO Overview Keyword for SEO All about
-                Website Content Strategy Complete On Page SEO using Yoast/Rank
-                Math plugin Technical SEO 1 Technical SEO 2 OFF Page SEO 1 OFF
-                Page SEO 2 Local SEO YouTube Introduction YouTube Channel
-                YouTube Video Instagram Overview Google Ads 1 Google Ads 2
-                E-mail Marketing LinkedIn Marketing
-              */}
-            </div>
-          )}
-          {active3 && (
-            <div>
-              <h3>You will learn form this course</h3>
-              <ul className="list-unstyled text-muted" style={{ fontSize: 14 }}>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML is the standard markup language for creating Web pages.
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-                <li className="mt-1">
-                  <FontAwesomeIcon
-                    icon={faHandPointRight}
-                    style={{ color: "#02863A" }}
-                  />{" "}
-                  HTML stands for Hyper Text Markup Language HTML describes the
-                  structure of a Web page .
-                </li>
-              </ul>
-            </div>
-          )}
+          </Row> */}
         </div>
       </Col>
       <Col md={4}>
