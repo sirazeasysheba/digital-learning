@@ -1,12 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Footer from "../components/Footer/Footer";
-import Navigation from "../components/Navbar/Navigation";
 import about from "../media/about.jpg";
 const About = () => {
   return (
     <>
-      <Navigation />
       <Container>
         <h1 className="text-center my-5">About Digital Learning</h1>
         <div className="d-flex justify-content-center mb-5">
@@ -42,7 +39,6 @@ const About = () => {
           mentorship.
         </p>
       </Container>
-      <Footer />
     </>
   );
 };

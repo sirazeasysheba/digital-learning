@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import Footer from "../components/Footer/Footer";
-import Navigation from "../components/Navbar/Navigation";
 
 const Order = () => {
   return (
     <>
-      <Navigation />
       <Container>
         <Row>
           <h3 className="text-center my-5">Checkout</h3>
@@ -129,7 +126,6 @@ const Order = () => {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 };

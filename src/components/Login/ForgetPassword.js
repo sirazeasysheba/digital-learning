@@ -1,12 +1,9 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import Footer from "../Footer/Footer";
-import Navigation from "../Navbar/Navigation";
 
 const ForgetPassword = () => {
   return (
     <div>
-      <Navigation />
       <div id="forgetPassword" className="py-5">
         <div className="form-wrapper px-2">
           <Form
@@ -48,7 +45,6 @@ const ForgetPassword = () => {
           </Form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

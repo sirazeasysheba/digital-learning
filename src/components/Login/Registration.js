@@ -1,13 +1,10 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
-import Navigation from "../Navbar/Navigation";
 
 const Registration = () => {
   return (
     <>
-      <Navigation />
       <div id="registration" className="py-5">
         <div className="form-wrapper px-2">
           <div className="text-center mb-4">
@@ -106,7 +103,6 @@ const Registration = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -1,6 +1,4 @@
 import React from "react";
-import Navigation from "../Navbar/Navigation";
-import Footer from "../Footer/Footer";
 import CourseDetails from "./CourseDetails";
 import { useParams } from "react-router";
 import graphic from "../../media/GD.jpg";
@@ -116,9 +114,7 @@ const Departments = () => {
 
   return (
     <div>
-      <Navigation />
       <CourseDetails course={course} />
-      <Footer />
     </div>
   );
 };

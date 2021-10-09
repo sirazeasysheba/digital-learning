@@ -1,15 +1,10 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
-import Navigation from "../Navbar/Navigation";
 
 const Login = () => {
   return (
     <>
-      <div style={{ backgroundColor: "#1e2f50", color: "white" }}>
-        <Navigation />
-      </div>
       <div className="login section">
         <div id="login" className="py-5">
           <div className="form-wrapper px-2">
@@ -92,7 +87,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

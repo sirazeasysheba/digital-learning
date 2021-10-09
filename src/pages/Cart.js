@@ -1,6 +1,5 @@
 import React from "react";
-import Navigation from "../components/Navbar/Navigation";
-import Footer from "../components/Footer/Footer";
+
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +8,6 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   return (
     <>
-      <Navigation />
       <div className="cart">
         <h1 className="mt-5 text-center">Cart </h1>
         <Container>
@@ -79,7 +77,6 @@ const Cart = () => {
           </Row>
         </Container>
       </div>
-      <Footer />
     </>
   );
 };

@@ -15,10 +15,13 @@ import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Stories from "./pages/Stories";
 import Practice from "./components/Practice";
+import NavigationBar from "./components/Navbar/NavigationBar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
+      <NavigationBar />
       <Switch>
         <Route exact path="/courses/:name">
           <Departments />
@@ -66,6 +69,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import React from "react";
-import Navigation from "../Navbar/Navigation";
-import Footer from "../Footer/Footer";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import {
   faMapMarkerAlt,
@@ -12,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Contact = () => {
   return (
     <div>
-      <Navigation />
       <div className="contact-container my-5">
         <div className="contact-header text-center my-5">
           <h6 className="fw-bold text-success">CONTACT US</h6>
@@ -102,7 +99,6 @@ const Contact = () => {
           </Row>
         </Container>
       </div>
-      <Footer />
     </div>
   );
 };
