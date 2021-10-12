@@ -5,6 +5,7 @@
 @import "./card";
 @import "./forms";
 @import "./dashboard";
+@import "./service";
 .submit-btn {
   padding: 10px 40px;
   color: white;
@@ -60,5 +61,27 @@
   &:focus {
     overflow: hidden !important;
     box-shadow: none !important;
+  }
+}
+
+.mentor-image {
+  height: 200px !important;
+  width: 200px !important;
+  border-radius: 50% !important;
+  // display: flex;
+  // justify-content: center;
+  // width: 50% !important;
+}
+.mentors {
+  font-weight: 700;
+  position: relative;
+  font-size: 36px;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 120px;
+    bottom: 0;
+    background-color: #02863a;
   }
 }

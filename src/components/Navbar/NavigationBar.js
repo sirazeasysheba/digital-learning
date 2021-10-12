@@ -205,19 +205,25 @@ const Navigation = () => {
               >
                 <NavDropdown.Item>
                   {" "}
-                  <Link to="/" className="dropdown-content ">
+                  <Link
+                    to="/services/web-development"
+                    className="dropdown-content "
+                  >
                     {" "}
                     WEB DESIGN & DEVELOPMENT
                   </Link>{" "}
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/" className="dropdown-content ">
+                  <Link
+                    to="/services/digital-marketing"
+                    className="dropdown-content "
+                  >
                     {" "}
                     DIGITAL MARKETING & BRANDING
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/" className="dropdown-content ">
+                  <Link to="/services/design" className="dropdown-content ">
                     {" "}
                     DESIGN & CREATIVE
                   </Link>

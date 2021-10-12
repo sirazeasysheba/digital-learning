@@ -4,7 +4,9 @@ const Gallery = () => {
   return (
     <>
       <div>
-        <h1>Gallery</h1>
+        <div className="d-flex justify-content-center my-5 mentors">
+          Upcoming
+        </div>
       </div>
     </>
   );

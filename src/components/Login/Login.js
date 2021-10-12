@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { useDispatch } from "react-redux";
+import { Link, useHistory, useLocation, Redirect } from "react-router-dom";
+// import { isUserLoggedIn, login } from "../../redux/actions";
 
 const Login = () => {
+  const [loginInfo, setLoginInfo] = useState({
+    email: "",
+    password: "",
+  });
+  const _change = (e) => {
+    setLoginInfo({
+      ...loginInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+  // const history = useHistory();
+  // const location = useLocation();
+  // let { from } = location.state || { from: { pathname: "/about" } };
+  // const dispatch = useDispatch();
+  // const auth = useSelector((state) => state.auth);
+
+  const userLogin = (e) => {
+    e.preventDefault();
+    console.log(loginInfo);
+  };
+  //   const user = { loginInfo };
+  //   dispatch(login(user));
+  //   // history.replace(from);
+  // };
+
+  // if (auth.authenticate) {
+  //   return <Redirect to={`/about`} />;
+  // }
+
   return (
     <>
       <div className="login section">
@@ -17,19 +49,20 @@ const Login = () => {
               //   onSubmit={handleSubmit}
               className="mx-auto mb-3"
               style={{ maxWidth: 400 }}
+              onSubmit={userLogin}
             >
               <Form.Group className="mb-2" controlId="phoneNumber">
                 <Form.Label className="fw-medium text-brand-primary">
-                  Email or Username <span className="text-danger">*</span>
+                  Email<span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
-                  //   onChange={_change}
                   name="email"
                   type="text"
-                  pattern="[0-9]{11}"
+                  // pattern="[0-9]{11}"
                   placeholder="axxx@xyz.com"
-                  //   value={loginInfo.phone_number}
+                  value={loginInfo.email}
                   className="shadow-none"
+                  onChange={_change}
                   required
                 />
               </Form.Group>
@@ -39,11 +72,11 @@ const Login = () => {
                   Password <span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
-                  //   onChange={_change}
+                  onChange={_change}
                   name="password"
                   type="password"
                   placeholder="Password"
-                  //   value={loginInfo.password}
+                  value={loginInfo.password}
                   className="shadow-none"
                   required
                 />

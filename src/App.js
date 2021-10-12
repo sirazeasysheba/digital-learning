@@ -14,9 +14,12 @@ import Advisors from "./pages/Advisors";
 import Gallery from "./pages/Gallery";
 import News from "./pages/News";
 import Stories from "./pages/Stories";
-import Practice from "./components/Practice";
 import NavigationBar from "./components/Navbar/NavigationBar";
 import Footer from "./components/Footer/Footer";
+import Workshops from "./pages/Workshops";
+import Web from "./components/Services/Web";
+import DM from "./components/Services/DM";
+import Design from "./components/Services/Design";
 
 function App() {
   return (
@@ -62,11 +65,20 @@ function App() {
         <Route exact path="/success-stories">
           <Stories />
         </Route>
-        <Route exact path="/practice">
-          <Practice />
+        <Route exact path="/workshops">
+          <Workshops />
         </Route>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/services/web-development">
+          <Web />
+        </Route>
+        <Route exact path="/services/digital-marketing">
+          <DM />
+        </Route>
+        <Route exact path="/services/design">
+          <Design />
         </Route>
       </Switch>
       <Footer />

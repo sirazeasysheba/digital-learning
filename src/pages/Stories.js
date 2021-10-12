@@ -4,7 +4,9 @@ const Stories = () => {
   return (
     <>
       <div>
-        <h1>Stories</h1>
+        <div className="d-flex justify-content-center mb-5 mentors">
+          Coming Soon !!!!
+        </div>
       </div>
     </>
   );

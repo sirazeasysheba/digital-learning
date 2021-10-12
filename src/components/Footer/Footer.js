@@ -67,7 +67,7 @@ const Footer = () => {
           <h6 className="text-white mb-4 mt-5">COURSES</h6>
           <li className="d-block mb0 "></li>
           <Link to="/courses/web-development" className="d-block  mb-2 mt-1">
-            Advanced Web Design
+            Responsive Web Design
           </Link>
           <Link to="/courses/graphic-design" className="d-block  mb-2">
             Graphic Design

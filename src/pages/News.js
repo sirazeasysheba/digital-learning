@@ -3,7 +3,9 @@ const News = () => {
   return (
     <>
       <div>
-        <h1>News</h1>
+        <div className="d-flex justify-content-center mb-5 mentors">
+          Upcoming
+        </div>
       </div>
     </>
   );

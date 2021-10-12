@@ -84,7 +84,7 @@ const HomeMain = () => {
                   icon={faGraduationCap}
                   className="graduate-icon mb-3"
                 />
-                <p className=" fw-bold">60K+ </p>
+                <p className=" fw-bold">100+ </p>
                 <h6 className="mb-3 fw-bold">Graduate Students</h6>
               </Col>
 
@@ -93,7 +93,7 @@ const HomeMain = () => {
                   icon={faUserGraduate}
                   className="graduate-icon mb-3"
                 />
-                <p className="fw-bold">60K+ </p>
+                <p className="fw-bold"> 10+ </p>
                 <Link to="/mentors" className="text-decoration-none">
                   <h6 className="mb-3 fw-bold" style={{ color: "black" }}>
                     Mentors

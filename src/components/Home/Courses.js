@@ -33,7 +33,6 @@ const Courses = () => {
       icon: content,
     },
   ];
-  console.log(courses);
   return (
     <div className="courses mt-5" id="courses">
       <div className="d-flex justify-content-center mb-5 course-head">
