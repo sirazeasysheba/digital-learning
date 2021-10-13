@@ -30,7 +30,7 @@ const CourseDetails = ({ course }) => {
   const softwareList = software.split(".");
 
   return (
-    <Row className="ms-4 mt-5">
+    <Row className="ms-4 mt-5 gx-0">
       <div className="cart-icon d-none">
         <Link to="/cart" className="text-decoration-none text-white">
           <FontAwesomeIcon icon={faCartPlus} />
@@ -172,23 +172,6 @@ const CourseDetails = ({ course }) => {
               </Row>
             </Tab.Container>
           </Row>
-          {/* <Row className="active-btn-section mb-3">
-            <Col md={4} className="p-0">
-              <button className="active-toggle-btn" onClick={handleChange}>
-                Overview
-              </button>
-            </Col>
-            <Col md={4} className="p-0">
-              <button className="active-toggle-btn" onClick={handleChange2}>
-                Curriculum
-              </button>
-            </Col>
-            <Col md={4} className="p-0">
-              <button className="active-toggle-btn" onClick={handleChange3}>
-                Course Objective
-              </button>
-            </Col>
-          </Row> */}
         </div>
       </Col>
       <Col md={4}>
@@ -250,7 +233,10 @@ const CourseDetails = ({ course }) => {
               BUY THIS COURSE{" "}
               <FontAwesomeIcon icon={faLongArrowAltRight} className="ms-2" />
             </button>
-            <button className="course-details-btn mb-5">REGISTER</button>
+            <Link to="/dashboard">
+              {" "}
+              <button className="course-details-btn mb-5">REGISTER</button>
+            </Link>
           </div>
         </div>
       </Col>

@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Dropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../media/logo.svg";
 import {
   faPhone,
   faEnvelope,
   faUserAlt,
+  faUser,
+  faCog,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { signOut } from "../../redux/actions";
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const showDropdown = (e) => {
@@ -38,7 +44,12 @@ const Navigation = () => {
   const hideDropdown3 = (e) => {
     setShow3(false);
   };
-
+  const token = window.localStorage.getItem("token");
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  const logout = () => {
+    dispatch(signOut());
+  };
   return (
     <>
       <div className="nav-header text-white d-flex justify-content-between align-items-center ">
@@ -52,10 +63,73 @@ const Navigation = () => {
           <FontAwesomeIcon icon={faEnvelope} className="mt-1" />
           <p className="mx-2 mail">info@easysheba.com </p>
         </div>
-        <div className="d-flex mt-3 mx-3">
-          <FontAwesomeIcon icon={faUserAlt} className="me-2 nav-icons" />
-          <p>Login/Register</p>
-        </div>
+        {token ? (
+          <div className="d-flex mt-3 mx-3">
+            <FontAwesomeIcon icon={faUserAlt} className="me-2 mt-2" />
+            <Dropdown>
+              <Dropdown.Toggle className="navbar-menu-button mb-2">
+                {" "}
+                {auth.user.name}{" "}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  style={{ fontSize: 12, fontWeight: 700 }}
+                  disabled
+                >
+                  Logged in
+                </Dropdown.Item>
+                <Dropdown.Item style={{ fontSize: 12, fontWeight: 700 }}>
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    style={{
+                      fontSize: 12,
+                      marginRight: 10,
+                    }}
+                    className="mt-2 text-muted"
+                  />{" "}
+                  <Link to="/profile" className="topbar-link">
+                    Profile
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item style={{ fontSize: 12, fontWeight: 700 }}>
+                  <FontAwesomeIcon
+                    icon={faCog}
+                    style={{
+                      fontSize: 12,
+                      marginRight: 10,
+                    }}
+                    className="mt-2 text-dark"
+                  />{" "}
+                  <Link to="/admin/setting" className="topbar-link">
+                    Setting
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  style={{ fontSize: 12, fontWeight: 700 }}
+                  onClick={logout}
+                >
+                  <FontAwesomeIcon
+                    icon={faSignOutAlt}
+                    style={{
+                      fontSize: 12,
+                      marginRight: 10,
+                    }}
+                    className="mt-2 text-danger"
+                  />{" "}
+                  Logout
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+        ) : (
+          <div className="d-flex mt-3 mx-3">
+            <FontAwesomeIcon icon={faUserAlt} className="me-2" />
+            <Link to="/login" className="text-decoration-none text-white">
+              {" "}
+              <p>Login/Register</p>
+            </Link>
+          </div>
+        )}
       </div>
       <Navbar collapseOnSelect expand="lg">
         {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
@@ -66,6 +140,11 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
+            <li className="nav-item">
+              <NavLink to="/" className="nav-link">
+                HOME
+              </NavLink>
+            </li>
             <li>
               <NavDropdown
                 title="ABOUT"
@@ -236,9 +315,11 @@ const Navigation = () => {
               </NavLink>
             </li>
             <li className="nav-item me-3">
-              <NavLink to="/login" className="nav-link">
-                LOGIN
-              </NavLink>
+              {!token && (
+                <NavLink to="/login" className="nav-link">
+                  LOGIN
+                </NavLink>
+              )}
             </li>
           </Nav>
         </Navbar.Collapse>

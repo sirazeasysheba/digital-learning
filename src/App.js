@@ -20,8 +20,20 @@ import Workshops from "./pages/Workshops";
 import Web from "./components/Services/Web";
 import DM from "./components/Services/DM";
 import Design from "./components/Services/Design";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import DashBoard from "./pages/DashBoard";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { isUserLoggedIn } from "./redux/actions";
 
 function App() {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!auth.authenticate) {
+      dispatch(isUserLoggedIn());
+    }
+  }, []);
   return (
     <div className="App">
       <NavigationBar />
@@ -80,6 +92,9 @@ function App() {
         <Route exact path="/services/design">
           <Design />
         </Route>
+        <PrivateRoute exact path="/dashboard">
+          <DashBoard />
+        </PrivateRoute>
       </Switch>
       <Footer />
     </div>

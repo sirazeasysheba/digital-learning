@@ -1,4 +1,5 @@
 import React from "react";
+import Blog from "./Blog";
 import Courses from "./Courses";
 import HomeMain from "./HomeMain";
 
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <HomeMain />
       <Courses />
+      <Blog />
     </>
   );
 };

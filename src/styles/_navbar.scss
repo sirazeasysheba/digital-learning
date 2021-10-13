@@ -35,6 +35,17 @@
 .nav-link {
   color: #1e2f50 !important;
 }
+.navbar-menu-button {
+  border: none !important;
+  background: transparent !important;
+  &:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  &:hover {
+    color: turquoise !important;
+  }
+}
 @media screen and (max-width: 600px) {
   .mail {
     display: none;

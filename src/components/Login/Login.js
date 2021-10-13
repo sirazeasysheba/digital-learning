@@ -1,39 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-// import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useHistory, useLocation, Redirect } from "react-router-dom";
-// import { isUserLoggedIn, login } from "../../redux/actions";
-
+import { isUserLoggedIn, login } from "../../redux/actions";
 const Login = () => {
-  const [loginInfo, setLoginInfo] = useState({
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState("");
   const _change = (e) => {
-    setLoginInfo({
-      ...loginInfo,
+    setUser({
+      ...user,
       [e.target.name]: e.target.value,
     });
   };
-  // const history = useHistory();
-  // const location = useLocation();
-  // let { from } = location.state || { from: { pathname: "/about" } };
-  // const dispatch = useDispatch();
-  // const auth = useSelector((state) => state.auth);
+  const history = useHistory();
+  const location = useLocation();
+  let { from } = location.state || { from: { pathname: "/dashboard" } };
+  const auth = useSelector((state) => state.auth);
 
   const userLogin = (e) => {
     e.preventDefault();
-    console.log(loginInfo);
+    console.log(user);
+    dispatch(login(user));
+    history.replace(from);
   };
-  //   const user = { loginInfo };
-  //   dispatch(login(user));
-  //   // history.replace(from);
-  // };
 
-  // if (auth.authenticate) {
-  //   return <Redirect to={`/about`} />;
-  // }
+  if (auth.authenticate) {
+    return <Redirect to={`/dashboard`} />;
+  }
 
   return (
     <>
@@ -60,7 +58,7 @@ const Login = () => {
                   type="text"
                   // pattern="[0-9]{11}"
                   placeholder="axxx@xyz.com"
-                  value={loginInfo.email}
+                  value={user.email}
                   className="shadow-none"
                   onChange={_change}
                   required
@@ -76,7 +74,7 @@ const Login = () => {
                   name="password"
                   type="password"
                   placeholder="Password"
-                  value={loginInfo.password}
+                  value={user.password}
                   className="shadow-none"
                   required
                 />

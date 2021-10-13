@@ -85,3 +85,17 @@
     background-color: #02863a;
   }
 }
+.blog-header {
+  font-weight: 700;
+  margin-top: 100px;
+  position: relative;
+  font-size: 36px;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 120px;
+    bottom: 0;
+    background-color: #02863a;
+  }
+}
