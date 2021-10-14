@@ -28,7 +28,9 @@ const CourseDetails = ({ course }) => {
   const objectiveList = objective.split(".");
   const highlightList = highlight.split(".");
   const softwareList = software.split(".");
-
+  const handleClick = () => {
+    console.log("clicked");
+  };
   return (
     <Row className="ms-4 mt-5 gx-0">
       <div className="cart-icon d-none">
@@ -235,7 +237,9 @@ const CourseDetails = ({ course }) => {
             </button>
             <Link to="/dashboard">
               {" "}
-              <button className="course-details-btn mb-5">REGISTER</button>
+              <button className="course-details-btn mb-5" onClick={handleClick}>
+                REGISTER
+              </button>
             </Link>
           </div>
         </div>

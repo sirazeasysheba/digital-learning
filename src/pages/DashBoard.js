@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 const DashBoard = () => {
   const auth = useSelector((state) => state.auth);
   const { name, username, email, contactNumber } = auth.user;
-
   return (
     <div>
       <div className="d-flex justify-content-center my-5 mentors">
@@ -17,8 +16,8 @@ const DashBoard = () => {
       <div className="d-flex justify-content-center">
         <div className="border p-5">
           <p>Name: {name}</p>
-          <p>Username:{username} </p>
-          <p>Email:{email} </p>
+          <p>Username: {username} </p>
+          <p>Email: {email} </p>
           <p>Phone: {contactNumber}</p>
         </div>
       </div>
@@ -26,9 +25,19 @@ const DashBoard = () => {
       <div className="cart">
         <Container>
           <Row>
+            <p className="text-center mt-5">
+              {" "}
+              Click on the link to register for the course
+              <a
+                href="https://docs.google.com/forms/d/1hIdoSO_NC1Ig4sOztPUQj_0Jl9oqgQLCHAcG4SkGxyY/edit"
+                target="_blank"
+              >
+                Link
+              </a>
+            </p>
             <Col md={8} className="mt-5">
-              <div className="mx-3 border border-bottom-0 ">
-                <div className="d-flex justify-content-around my-3 align-items-center border-bottom pb-3">
+              {/* <div className="mx-3 border border-bottom-0 ">
+                {/* <div className="d-flex justify-content-around my-3 align-items-center border-bottom pb-3">
                   <img
                     src={img}
                     alt=""
@@ -54,9 +63,9 @@ const DashBoard = () => {
                   <p> ৳2200</p>
                   <FontAwesomeIcon icon={faTimes} className="mb-3" />
                 </div>
-              </div>
+              </div> */}
             </Col>
-            <Col md={4} className=" mt-1">
+            {/* <Col md={4} className=" mt-1">
               <h3 className="fw-medium">Total</h3>
               <div className=" mt-1 border p-5">
                 <div
@@ -71,7 +80,7 @@ const DashBoard = () => {
                   <h4> 20000 ৳</h4>
                 </div>
               </div>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>

@@ -29,7 +29,15 @@ const Footer = () => {
             <div className="social-media">
               <ul className="list-unstyled d-flex justify-content-center">
                 <li className="social-icons text-center  mx-2 facebook">
-                  <FontAwesomeIcon icon={faFacebookF} />
+                  <a
+                    href="https://www.facebook.com/digitallearningxyz"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "#a5b7d9" }}
+                  >
+                    {" "}
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </a>
                 </li>
                 <li className="social-icons text-center mx-2 youtube">
                   <FontAwesomeIcon icon={faYoutube} />

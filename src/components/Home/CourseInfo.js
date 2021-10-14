@@ -32,7 +32,7 @@ const CourseInfo = ({ course }) => {
               <div>
                 <Link to="/dashboard" className="text-decoration-none">
                   {" "}
-                  <button className="add-cart-button mt-1">Registration</button>
+                  <button className="add-cart-button mt-1">Register</button>
                 </Link>
               </div>
             </div>

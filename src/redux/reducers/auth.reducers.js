@@ -11,6 +11,7 @@ const initState = {
   },
   authenticate: false,
   authenticating: false,
+  error: "",
 };
 export default (state = initState, action) => {
   console.log(action);
@@ -27,6 +28,14 @@ export default (state = initState, action) => {
         user: action.payload.user,
         token: action.payload.token,
         authenticate: true,
+        authenticating: false,
+      };
+      break;
+    case authConstants.LOGIN_FAILURE:
+      state = {
+        ...state,
+        error: action.payload.error,
+        authenticate: false,
         authenticating: false,
       };
       break;

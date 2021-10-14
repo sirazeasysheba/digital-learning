@@ -22,7 +22,6 @@ const Registration = () => {
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/dashboard" } };
   const student = useSelector((state) => state.user);
-  const errors = student.error;
   console.log(error);
   const dispatch = useDispatch();
   const userSignup = (e) => {

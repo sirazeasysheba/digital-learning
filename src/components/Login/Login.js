@@ -4,19 +4,22 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link, useHistory, useLocation, Redirect } from "react-router-dom";
 import { isUserLoggedIn, login } from "../../redux/actions";
+import * as yup from "yup";
+import { useFormik } from "formik";
 const Login = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const _change = (e) => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
     });
   };
+
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/dashboard" } };
@@ -28,6 +31,12 @@ const Login = () => {
     dispatch(login(user));
     history.replace(from);
   };
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      onSubmit: userLogin,
+      initialValues,
+      validationSchema: formSchema,
+    });
 
   if (auth.authenticate) {
     return <Redirect to={`/dashboard`} />;
@@ -41,6 +50,7 @@ const Login = () => {
             <div className="text-center mb-4">
               <h1 className="text-brand-primary mb-2">Login to continue</h1>
             </div>
+            {/* {error && <p>{error}</p>} */}
             <Form
               noValidate
               //   validated={validated}
@@ -58,7 +68,7 @@ const Login = () => {
                   type="text"
                   // pattern="[0-9]{11}"
                   placeholder="axxx@xyz.com"
-                  value={user.email}
+                  value={values.email}
                   className="shadow-none"
                   onChange={_change}
                   required
@@ -121,5 +131,21 @@ const Login = () => {
     </>
   );
 };
+const initialValues = {
+  phone_number: "",
+  password: "",
+};
 
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+const formSchema = yup.object().shape({
+  phone_number: yup
+    .string()
+    .required("required")
+    .matches(phoneRegExp, "Phone number is not valid")
+    .min(11, "to short")
+    .max(14, "to long"),
+  password: yup.string().required("${path} is required"),
+});
 export default Login;
